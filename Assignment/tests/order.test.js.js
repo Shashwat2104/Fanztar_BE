@@ -2,11 +2,8 @@ const chai = require("chai");
 const chaiHttp = require("chai-http");
 const express = require("express");
 const expect = chai.expect;
-
 chai.use(chaiHttp);
-// const app = express()
-
-const app = require("../index"); // Replace with the actual path to your Express app
+const app = require("../index");
 
 describe("Order API Tests", () => {
   describe("POST /orders", () => {

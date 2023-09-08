@@ -1,19 +1,16 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const orderRoutes = require("./routes/order"); // Import order routes
-
 const app = express();
 const port = process.env.PORT || 4500;
 
 // Middleware to parse JSON request bodies
 app.use(bodyParser.json());
 
-// Example route
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
 
-// Define routes
 app.use("/orders", orderRoutes);
 
 // Error handling middleware

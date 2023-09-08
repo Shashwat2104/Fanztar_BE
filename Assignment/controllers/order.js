@@ -2,23 +2,22 @@ const orders = [];
 
 // Sample data (Replace with your own data)
 const componentPrices = {
-  A: 10.28, // LED Screen
-  B: 24.07, // OLED Screen
-  C: 33.3,  // AMOLED Screen
-  D: 25.94, // Wide-Angle Camera
-  E: 32.39, // Ultra-Wide-Angle Camera
-  F: 18.77, // USB-C Port
-  G: 15.13, // Micro-USB Port
-  H: 20.0,  // Lightning Port
-  I: 42.31, // Android OS
-  J: 45.0,  // iOS OS
-  K: 45.0,  // Metallic Body
-  L: 30.0,  // Plastic Body
+  A: 10.28,
+  B: 24.07,
+  C: 33.3,
+  D: 25.94,
+  E: 32.39,
+  F: 18.77,
+  G: 15.13,
+  H: 20.0,
+  I: 42.31,
+  J: 45.0,
+  K: 45.0,
+  L: 30.0,
 };
 
 // Create a new order
 exports.createOrder = (req, res) => {
-     
   const { components } = req.body;
 
   // Check if components array is valid and contains exactly 5 unique components
@@ -34,11 +33,11 @@ exports.createOrder = (req, res) => {
 
   // Check if there is only one part selected from each category
   const categories = {
-    screen: ["A", "B", "C"], // LED, OLED, AMOLED
-    camera: ["D", "E"], // Wide-Angle, Ultra-Wide-Angle
-    port: ["F", "G", "H"], // USB-C, Micro-USB, Lightning
-    os: ["I", "J"], // Android, iOS
-    body: ["K", "L"], // Metallic, Plastic
+    screen: ["A", "B", "C"], 
+    camera: ["D", "E"], 
+    port: ["F", "G", "H"], 
+    os: ["I", "J"], 
+    body: ["K", "L"], 
   };
 
   for (const category in categories) {
@@ -78,7 +77,6 @@ exports.createOrder = (req, res) => {
 };
 
 exports.getAllOrders = (req, res) => {
-  // Return all orders
   res.status(200).json(orders);
 };
 
@@ -101,7 +99,7 @@ function getPartName(componentCode) {
   return partMap[componentCode] || "Unknown Part";
 }
 
-// Dummy function to generate a unique order ID
+// function to generate a unique order ID
 function generateOrderId() {
   const timestamp = Date.now().toString();
   const randomNum = Math.floor(Math.random() * 10000).toString();
