@@ -16,6 +16,7 @@ const componentPrices = {
   L: 30.0,
 };
 
+
 // Create a new order
 exports.createOrder = (req, res) => {
   const { components } = req.body;
@@ -52,6 +53,7 @@ exports.createOrder = (req, res) => {
     }
   }
 
+
   // Calculate the total price and selected parts
   let total = 0;
   const selectedParts = [];
@@ -76,9 +78,11 @@ exports.createOrder = (req, res) => {
   res.status(201).json(order);
 };
 
+
 exports.getAllOrders = (req, res) => {
   res.status(200).json(orders);
 };
+
 
 // Helper function to get the part name based on the component code
 function getPartName(componentCode) {

@@ -3,7 +3,6 @@ const router = express.Router();
 const orderController = require("../controllers/order");
 
 // Define a route for creating a new order(POST)
-
 router.post("/", orderController.createOrder);
 
 // Define a route for getting all orders (GET)
