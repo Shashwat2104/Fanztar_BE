@@ -1,5 +1,4 @@
 # Fanztar_BE
-
 Welcome to the Fanztar_BE repository! This is the backend part of our Fanztar project.
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
@@ -19,20 +18,20 @@ An order will be considered valid if it contains exactly one part from each of t
 
 To calculate prices, we use the following input data (stored locally in memory):
 
-| Code | Price | Part                  |
-| ---- | ----- | --------------------- |
-| A    | 10.28 | LED Screen            |
-| B    | 24.07 | OLED Screen           |
-| C    | 33.30 | AMOLED Screen         |
-| D    | 25.94 | Wide-Angle Camera     |
-| E    | 32.39 | Ultra-Wide-Angle Cam. |
-| F    | 18.77 | USB-C Port            |
-| G    | 15.13 | Micro-USB Port        |
-| H    | 20.00 | Lightning Port        |
-| I    | 42.31 | Android OS            |
-| J    | 45.00 | iOS OS                |
-| K    | 45.00 | Metallic Body         |
-| L    | 30.00 | Plastic Body          |
+| Code | Price  | Part                  |
+| ---- | ------ | --------------------- |
+| A    | 10.28  | LED Screen            |
+| B    | 24.07  | OLED Screen           |
+| C    | 33.30  | AMOLED Screen         |
+| D    | 25.94  | Wide-Angle Camera     |
+| E    | 32.39  | Ultra-Wide-Angle Cam. |
+| F    | 18.77  | USB-C Port            |
+| G    | 15.13  | Micro-USB Port        |
+| H    | 20.00  | Lightning Port        |
+| I    | 42.31  | Android OS            |
+| J    | 45.00  | iOS OS                |
+| K    | 45.00  | Metallic Body         |
+| L    | 30.00  | Plastic Body          |
 
 ## Installation
 
@@ -42,43 +41,52 @@ To set up the project locally, follow these steps:
 
    ```bash
    git clone https://github.com/Shashwat2104/Fanztar_BE.git
-   ```
-
 2. **Navigate to the project directory:**
    ```bash
    cd Fanztar_BE/Assignment
-   ```
-3. **\*Install Dependencies:**
+3. ***Install Dependencies:**
    ```bash
    npm i
-   ```
 4. **Start the Application:**
    ```bash
-   npm run server
+   npm run server 
+   
+## How It Works
 
-   ```
-5. **Make API Requests:**
+- **Input**: Make an HTTP POST request to `/orders` with a JSON payload specifying the components you want, like this:
 
-You can now make API requests to interact with the Fanztar Backend. Use tools like Postman or curl, or integrate the API with your frontend application.
+   ```json
+   {
+     "components": ["I", "A", "D", "F", "K"]
+   }
 
-- To create an order, make an HTTP POST request to `/orders` with a JSON body like this:
+- **Output**
 
-  ```json
-  {
-    "components": ["I", "A", "D", "F", "K"]
-  }
-  ```
+If the request is successful, you will receive a response with a status code `201` and details of your order in JSON format:
 
-  You will receive a response with the order ID, total price, and selected parts.
+```json
+{
+  "order_id": "some-id",
+  "total": 142.3,
+  "parts": [
+    "LED Screen",
+    "Wide-Angle Camera",
+    "USB-C Port",
+    "Android OS",
+    "Metallic Body"
+  ]
+}
 
-6. **Testing:**
+```
+- **Testing:**
 
 To run the unit tests, use the following command:
-
-```bash
+``` bash
 npm run test
 ```
 
+ 
+   
 ## API Documentation
 
 Explore our API documentation for detailed information on how to interact with Fanztar's backend [here](#api-documentation).
@@ -97,4 +105,5 @@ We'd like to thank all of our contributors and supporters who have helped make F
 
 ## Contact
 
-For any inquiries or feedback, please contact us at [shashwatmahender2104@gmail.com](mailto:your@email.com).
+For any inquiries or feedback, please contact us at [shashwatmahender2104@gmail.com](mailto:your@email.com).   
+
